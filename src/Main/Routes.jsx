@@ -7,6 +7,7 @@ import Home from "../Components/Home/Home";
 import ErrorPage from "../SharedCompoents/ErrorPage";
 import LogIn from "../Auths/LogIn";
 import Register from "../Auths/Register";
+import AddBlogs from "../Components/Blogs/AddBlogs";
 
 
 const Routes = createBrowserRouter([
@@ -26,6 +27,10 @@ const Routes = createBrowserRouter([
             {
                 path:"/login",
                 element:<LogIn></LogIn>
+            },
+            {
+                path:"/addblog",
+                element:<AddBlogs></AddBlogs>
             }
         ]
     },

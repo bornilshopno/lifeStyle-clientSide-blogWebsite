@@ -15,6 +15,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photo = form.photo.value;
+        const name = form.name.value;
 
         createUser(email, password)
             .then((userCredential) => {
@@ -22,7 +23,7 @@ const Register = () => {
                 const newUser = userCredential.user;
                 setUser(newUser);
                 setLoading(false);
-                updateProfile(auth.currentUser, { photoURL: photo })
+                updateProfile(auth.currentUser, { photoURL: photo ,  displayName: name })
                     .then(() => {
                         // Profile updated!
                         // ...
@@ -57,6 +58,12 @@ const Register = () => {
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
