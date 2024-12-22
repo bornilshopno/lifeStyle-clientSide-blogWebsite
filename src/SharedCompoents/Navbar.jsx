@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import useAuth from "./useAuth";
+import { ToastContainer } from "react-toastify";
 
 
 const Navbar = () => {
@@ -14,7 +15,9 @@ const Navbar = () => {
         <li><NavLink to={"/"}>Wishlist</NavLink> </li>
     </>
     return (
+       
         <div className="navbar bg-base-100">
+             <ToastContainer></ToastContainer>
             <div className="navbar-start">                
                 <a className="btn btn-ghost text-xl">LiftStyle Circuit</a>
             </div>
