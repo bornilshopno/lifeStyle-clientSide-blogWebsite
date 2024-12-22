@@ -5,6 +5,8 @@ import {
 import MainLayout from "./MainLayout";
 import Home from "../Components/Home/Home";
 import ErrorPage from "../SharedCompoents/ErrorPage";
+import LogIn from "../Auths/LogIn";
+import Register from "../Auths/Register";
 
 
 const Routes = createBrowserRouter([
@@ -16,6 +18,14 @@ const Routes = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path:"/register",
+                element:<Register></Register>,
+            },
+            {
+                path:"/login",
+                element:<LogIn></LogIn>
             }
         ]
     },

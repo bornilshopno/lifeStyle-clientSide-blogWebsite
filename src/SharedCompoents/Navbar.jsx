@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import useAuth from "./useAuth";
 
 
 const Navbar = () => {
-    const{name}=useAuth()
+    const{user,userSignOut}=useAuth()
 
     const links = <>
         <li><NavLink to={"/"}>Home</NavLink></li>
@@ -24,13 +24,15 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-            {/* <div className="navbar-end gap-4">
-          {user ? <>  <p>{user.email}</p> <button className="btn btn-secondary" onClick={() => handleSignOut()}>SignOut</button>
-          </> : <>   <Link className="btn btn-primary" to={"/register"}>Register</Link>
+            
+            <div className="navbar-end gap-4">
+          {user ? 
+          <>  <p>{user.email}</p> <button className="btn btn-secondary" onClick={() => userSignOut()}>SignOut</button>
+          </> : 
+          <> <Link className="btn btn-primary" to={"/register"}>Register</Link>
             <Link className="btn btn-secondary" to={"/login"}>Login</Link></>}
-        </div> */}
-                <a className="btn">{name}</a>
+        </div>
+
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <HiMenu></HiMenu>
@@ -42,7 +44,7 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+       
     );
 };
 
