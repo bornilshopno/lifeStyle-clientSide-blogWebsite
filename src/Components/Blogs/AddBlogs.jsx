@@ -15,7 +15,7 @@ const AddBlogs = () => {
         const shortDescription = form.shortDescription.value;
         const longDescription = form.longDescription.value;
         const email = user.email;
-        const name = user.name;
+        const name = user.displayName;
 
 
         if (category === "Blog Category") {
