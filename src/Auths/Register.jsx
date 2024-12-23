@@ -3,12 +3,15 @@ import regAnimation from "../assets/RegisterAnimation.json"
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../SharedCompoents/useAuth";
 import { updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
 
-    const { setLoading, createUser, user, setUser, auth } = useAuth()
-
+    const { setLoading, createUser, user, setUser, auth, googleSignIn, userSignOut } = useAuth()
+    const navigate = useNavigate()
     const handleRegister = e => {
         e.preventDefault()
         const form = e.target;
@@ -23,7 +26,7 @@ const Register = () => {
                 const newUser = userCredential.user;
                 setUser(newUser);
                 setLoading(false);
-                updateProfile(auth.currentUser, { photoURL: photo ,  displayName: name })
+                updateProfile(auth.currentUser, { photoURL: photo, displayName: name })
                     .then(() => {
                         // Profile updated!
                         // ...
@@ -31,6 +34,20 @@ const Register = () => {
                         // An error occurred
                         console.log(error)
                     });
+                userSignOut()
+                Swal.fire({
+                    title: "Registration Complete",
+                    text: "LogIn to Explore",
+                    icon: "success",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "LogIn Now!"
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      navigate("/login")
+                    }
+                  });
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -38,7 +55,35 @@ const Register = () => {
                 console.log(errorCode, errorMessage)
             });
 
+
     }
+    const useGmail = () => {
+        googleSignIn()
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                // const credential = GoogleAuthProvider.credentialFromResult(result);
+                // const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                setUser(user);
+                setLoading(false);
+                navigate(location?.state ? location.state : "/")
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast.error("googlesign in error: ", errorCode, errorMessage)
+
+                /* The email of the user's account used.
+                 const email = error.customData.email;
+                 The AuthCredential type that was used.
+                 const credential = GoogleAuthProvider.credentialFromError(error);*/
+
+            });
+
+    }
+
+
     console.log(user)
     return (
         <div>
@@ -85,7 +130,7 @@ const Register = () => {
 
                         <div className="divider"> <h1>or</h1></div>
 
-                        <button className="btn btn-primary">
+                        <button className="btn btn-primary" onClick={useGmail}>
                             <FcGoogle></FcGoogle>
                             Login with Google</button>
                     </div>
