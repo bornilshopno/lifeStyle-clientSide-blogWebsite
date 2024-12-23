@@ -11,6 +11,7 @@ import AddBlogs from "../Components/Blogs/AddBlogs";
 import AllBlogs from "../Components/Blogs/AllBlogs";
 import BlogDetails from "../Components/Blogs/BlogDetails";
 import UpdateBlog from "../Components/Blogs/UpdateBlog";
+import WishList from "../Components/WishList/WishList";
 
 
 const Routes = createBrowserRouter([
@@ -38,6 +39,10 @@ const Routes = createBrowserRouter([
             {
                 path:"/allblogs",
                 element:<AllBlogs></AllBlogs>
+            },
+            {
+                path:"/wishlist",
+                element:<WishList></WishList>
             },
             {
                 path:"/blog/:id",
