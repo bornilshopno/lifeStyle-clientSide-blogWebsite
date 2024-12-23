@@ -10,6 +10,7 @@ import Register from "../Auths/Register";
 import AddBlogs from "../Components/Blogs/AddBlogs";
 import AllBlogs from "../Components/Blogs/AllBlogs";
 import BlogDetails from "../Components/Blogs/BlogDetails";
+import UpdateBlog from "../Components/Blogs/UpdateBlog";
 
 
 const Routes = createBrowserRouter([
@@ -42,7 +43,11 @@ const Routes = createBrowserRouter([
                 path:"/blog/:id",
                 element:<BlogDetails></BlogDetails>,
                 loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
-                // loader: ({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+            },
+            {
+                path:"/updateBlog/:id",
+                element: <UpdateBlog></UpdateBlog>,
+                loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
             }
         ]
     },

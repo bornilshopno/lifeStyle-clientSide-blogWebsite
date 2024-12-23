@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="bg-amber-400 dark:bg-gray-800 text-gray-800 dark:text-white">
             <footer className="footer py-5 px-10 place-items-center">
                 <aside>
-                <Link to="/"> <div className="flex gap-3 items-center"><IoGameControllerSharp className="text-2xl" /><span className="text-2xl font-bold">ChillGamer</span></div></Link>
-                    <p>A Game Review Application
+                <Link to="/"> <div className="flex gap-3 items-center"><IoGameControllerSharp className="text-2xl" /><span className="text-2xl font-bold">LifeStyle Curcuit</span></div></Link>
+                    <p className="text-center">A Page for Blogs
                     </p>
                 </aside>
                 <nav>
