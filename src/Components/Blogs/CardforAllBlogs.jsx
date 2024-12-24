@@ -8,7 +8,7 @@ const CardforAllBlogs = ({ blog }) => {
     const { _id, category, thumbnail, title, shortDescription, longDescription, email, name, photo } = blog;
     const wishlistHandler = () => {
         const wishOf = user.email;
-        const { _id, photo, thumbnail, longDescription, ...restItems } = blog;
+        const { _id, photo, longDescription, ...restItems } = blog;
         const blogId = _id;
         console.log(restItems);
         const wishBlog = { blogId, wishOf, ...restItems }
