@@ -86,51 +86,52 @@ const Register = () => {
 
     console.log(user)
     return (
-        <div>
+        <div className="bg-[url('/network.jpg')] bg-cover bg-center">
 
-            <div className="hero bg-base-200 min-h-screen ">
+            <div className="hero  min-h-screen ">
 
-                <div className="hero-content flex-col lg:flex-row-reverse gap-10 lg:gap-20">
-                    <div className="text-center lg:text-center lg:flex-1">
-                        {/* <h1 className="text-5xl font-bold">Login now!</h1> */}
-                        <Lottie animationData={regAnimation} className=""></Lottie>
+                <div className="hero-content flex-col lg:flex-row-reverse gap-10 lg:gap-20 w-11/12 md:w-10/12 mx-auto">
+                    <div className="text-center lg:text-center lg:flex-1 ">
+                        <Lottie animationData={regAnimation} className="w-full"></Lottie>
                     </div>
-                    <div className="card bg-base-100 shadow-2xl lg:flex-1">
-                        <form className="card-body" onSubmit={handleRegister}>
-                            <h1 className="text-center text-xl py-3 my-3 bg-gray-200">Sign Up for LifeStyle CirCuit</h1>
-                            <div className="form-control">
+                    <div className="card w-full shadow-2xl lg:flex-1 text-white  pb-5">
+                        <form className="card-body p-0" onSubmit={handleRegister}>
+                            <h1 className="text-center font-extrabold text-4xl pb-3">Sign Up</h1>
+                           <div className="grid grid-cols-1  gap-3">
+                           <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text text-white">Email :</span>
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className="label-text text-white">Name :</span>
                                 </label>
                                 <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo URL</span>
+                                    <span className="label-text text-white">Photo URL :</span>
                                 </label>
                                 <input type="url" name="photo" placeholder="Your Photo Url" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text text-white">Password :</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             </div>
+                           </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
 
-                        <div className="divider"> <h1>or</h1></div>
+                        <h1 className="font-bold text-center text-white my-5">----  OR  ----</h1>
 
-                        <button className="btn btn-primary" onClick={useGmail}>
+                        <button className="btn btn-primary " onClick={useGmail}>
                             <FcGoogle></FcGoogle>
                             Login with Google</button>
                     </div>

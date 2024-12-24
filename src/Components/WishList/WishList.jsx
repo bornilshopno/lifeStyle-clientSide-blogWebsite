@@ -7,6 +7,7 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import { BiSolidDetail } from "react-icons/bi";
 
 
+
 const WishList = () => {
     const { user } = useAuth()
     const [myWishes, setMywishes] = useState(null);
@@ -34,12 +35,12 @@ axios.delete(`http://localhost:5000/wish/${id}`)
         <div className="min-h-72 lg:min-h-96">
             <h1>Blogs In Wishlist</h1>
             <h3>No of wishes: {myWishes?.length} </h3>
-            <div>
+            <div className="bg-[#002b36] text-[#268bd2]">
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
                         <thead>
-                            <tr className="text-center">
+                            <tr className="text-center bg-[#002b36] text-white">
                                 <th></th>
                                 <th>Blog</th>
                                 <th>Author</th>
@@ -76,8 +77,8 @@ axios.delete(`http://localhost:5000/wish/${id}`)
                                 <td>{wish.shortDescription}</td>
                                 <th >
                               <div className="flex gap-2 items-center justify-center my-auto">
-                              <button className="" onClick={()=>wishDeleteHandler(wish._id)}><RiDeleteBin2Fill className="text-2xl" /></button>
-                              <Link to={`/blog/${wish.blogId}`}><button className=" "><BiSolidDetail className="text-2xl"/></button></Link>
+                              <button className="" onClick={()=>wishDeleteHandler(wish._id)}><RiDeleteBin2Fill className="text-2xl text-red-400" /></button>
+                              <Link to={`/blog/${wish.blogId}`}><button className=" "><BiSolidDetail className="text-2xl text-green-400"/></button></Link>
                               </div>
                                 </th>
                             </tr>)}
