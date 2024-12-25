@@ -1,9 +1,13 @@
+import Banner from "./Banner";
+import RecentBlogs from "./RecentBlogs";
+
 
 
 const Home = () => {
     return (
         <div>
-            Home
+          <Banner></Banner>
+        <RecentBlogs></RecentBlogs>
         </div>
     );
 };

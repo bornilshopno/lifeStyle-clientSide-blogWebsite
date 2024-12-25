@@ -96,22 +96,6 @@ const AddBlogs = () => {
                                 className="textarea textarea-bordered textarea-md" required></textarea>
 
                         </div>
-
-
-
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">User Email</span>
-                            </label>
-                            <input type="email" name="email" className="input input-bordered bg-slate-100" value={user?.email} readOnly />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">User Name</span>
-                            </label>
-                            <input type="text" name="name" className="input input-bordered bg-slate-100" value={user?.displayName || "anonymous"} readOnly />
-
-                        </div>
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Submit your Review</button>

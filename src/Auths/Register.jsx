@@ -90,13 +90,13 @@ const Register = () => {
 
             <div className="hero  min-h-screen ">
 
-                <div className="hero-content flex-col lg:flex-row-reverse gap-10 lg:gap-20 w-11/12 md:w-10/12 mx-auto">
+                <div className="hero-content flex-col lg:flex-row-reverse gap-10 lg:gap-20 w-10/12 lg:w-11/12 mx-auto">
                     <div className="text-center lg:text-center lg:flex-1 ">
                         <Lottie animationData={regAnimation} className="w-full"></Lottie>
                     </div>
                     <div className="card w-full shadow-2xl lg:flex-1 text-white  pb-5">
                         <form className="card-body p-0" onSubmit={handleRegister}>
-                            <h1 className="text-center font-extrabold text-4xl pb-3">Sign Up</h1>
+                            <h1 className="text-center font-extrabold text-xl py-3 bg-[#00bba6] text-gray-700 rounded-xl">Sign Up</h1>
                            <div className="grid grid-cols-1  gap-3">
                            <div className="form-control">
                                 <label className="label">
@@ -125,13 +125,13 @@ const Register = () => {
                            </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn btn-accent">Register</button>
                             </div>
                         </form>
 
                         <h1 className="font-bold text-center text-white my-5">----  OR  ----</h1>
 
-                        <button className="btn btn-primary " onClick={useGmail}>
+                        <button className="btn btn-accent " onClick={useGmail}>
                             <FcGoogle></FcGoogle>
                             Login with Google</button>
                     </div>

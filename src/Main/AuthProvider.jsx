@@ -9,6 +9,8 @@ import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStat
 const AuthProvider = ({ children }) => {
 const [loading,setLoading]=useState(true)
 const[user,setUser]=useState(null)
+const [allBlogs, setAllBlogs] = useState(null)
+console.log(allBlogs)
     const auth = getAuth(app);
     const createUser=(email,password)=>{
         setLoading(true)
@@ -39,7 +41,7 @@ const[user,setUser]=useState(null)
         return () => unSubscribe();
     }, [auth])
 
-    const authInfo = { loading,setLoading, createUser, loginUser,user,setUser,userSignOut,googleSignIn,auth}
+    const authInfo = { loading,setLoading, createUser, loginUser,user,setUser,userSignOut,googleSignIn,auth,allBlogs, setAllBlogs}
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
