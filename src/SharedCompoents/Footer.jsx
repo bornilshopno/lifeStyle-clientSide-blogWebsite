@@ -6,7 +6,7 @@ import { IoGameControllerSharp } from "react-icons/io5"
 
 const Footer = () => {
     return (
-        <div className="bg-amber-400 dark:bg-gray-800 text-gray-800 dark:text-white">
+        <div className="bg-gray-800 text-white">
             <footer className="footer py-5 px-10 place-items-center">
                 <aside>
                 <Link to="/"> <div className="flex gap-3 items-center"><IoGameControllerSharp className="text-2xl" /><span className="text-2xl font-bold">LifeStyle Curcuit</span></div></Link>

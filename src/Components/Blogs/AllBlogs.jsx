@@ -22,15 +22,17 @@ const {allBlogs}=useAuth()
    }, [filter,search])
 
    return (
-      <div>
-         <h1>All Blogs</h1>
+      <div  style={{
+         backgroundImage: "url('/sky.webp')",backgroundRepeat: "no-repeat", backgroundSize: "cover"
+       }} >
+          <h1 className="text-center font-extrabold text-xl py-3 bg-[#00bba6] text-gray-700 ">All Blogs of LifeStyle CirCuit</h1>
          <div className="flex justify-center gap-10 flex-col md:flex-row-reverse items center py-5 w-10/12 mx-auto">
-            <div className="flex justify-between items center overflow-hidden border border-gray-400 rounded-xl focus-within:ring">
-               <input onBlur={e=>setSearch(e.target.value)} type="text" name="searchbox" id="" placeholder="Enter Blog Title" className="focus:outline-none bg-white text-gray-600" />
+            <div className="flex justify-between items center overflow-hidden border border-gray-400 rounded-xl focus-within:ring w-64 mx-auto">
+               <input onBlur={e=>setSearch(e.target.value)} type="text" name="searchbox" id="" placeholder="Enter Blog Title" className="focus:outline-none bg-white text-gray-600 text-center" />
                <button className="btn btn-primary" onClick={(e)=>setSearch(e.target.searchbox.value)}> Search</button></div>
-            <div className="dropdown dropdown-bottom dropdown-end">
+            <div className="dropdown dropdown-bottom dropdown-end ">
                <div tabIndex={0} role="button" >
-                  {filter ?  <h1 className="btn bg-blue-700 text-white">Filtered by ${filter}</h1> :  <h1 className="btn bg-white text-gray-700">Filter by Category?</h1>}
+                  {filter ?  <h1 className="btn bg-blue-700  text-white">Filtered by ${filter}</h1> :  <h1 className="btn bg-white text-gray-700">Filter by Category?</h1>}
                  
                  
                </div>
@@ -44,7 +46,7 @@ const {allBlogs}=useAuth()
                </ul>
             </div>
          </div>
-         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 w-11/12 lg:w-10/12 mx-auto pb-10">
             {showBlogs?.map(blog => <CardforAllBlogs key={blog._id} blog={blog}></CardforAllBlogs>)}
          </div>
       </div>

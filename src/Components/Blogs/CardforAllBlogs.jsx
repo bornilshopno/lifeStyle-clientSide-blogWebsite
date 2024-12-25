@@ -61,8 +61,8 @@ const CardforAllBlogs = ({ blog }) => {
                 <div className="card-body">
                     <h2 className="card-title">{title}</h2>
                     <div className="flex justify-between flex-col">
-                        <p>Blog Posted By: {name}</p>
-                        <p>Blog Category : {category}</p>
+                        <p>Blog By: {name}</p>
+                        <p>Category : {category}</p>
                         <p>{shortDescription}</p>
                        
 

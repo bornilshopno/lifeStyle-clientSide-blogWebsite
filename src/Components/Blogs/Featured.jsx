@@ -1,11 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import theme from "./theme";
+import useAuth from "../../SharedCompoents/useAuth";
 
 
 
 const Featured = () => {
-    const allBlogs= useLoaderData()
+ 
+    const {featuredBlog}=useAuth()
 
     const columns = [
         {
@@ -23,22 +25,40 @@ const Featured = () => {
         {
             name:'Short Description',
             selector: row => row.shortDescription,
+        },
+        {   name: "Click to View",
+            cell: row => (
+                <Link to={`/blog/${row._id}`} style={{ textDecoration: 'none', color: 'white' }}>
+                    View Blog
+                </Link>
+
+                //to={`/blog/${_id}`}
+            ),
         }
     ];
-    
-    const data=[...allBlogs]
+
+  
     
 
 
     return (
         <div>
-           Featured 
+      
            <div>
            <DataTable 
 			columns={columns}
-			data={data}
-            title="Featured Blogs"
+			data={featuredBlog}
+            title="Featured Top10 Blogs :"
             theme={theme}
+            customStyles={{
+                header: {
+                    style: {
+                        justifyContent: 'center',
+                        display: 'flex',
+                        alignItems: 'center',
+                    },
+                },
+            }}
 		/>
            </div>
         </div>

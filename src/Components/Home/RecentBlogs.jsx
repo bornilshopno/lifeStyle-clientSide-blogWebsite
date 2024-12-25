@@ -15,7 +15,7 @@ const RecentBlogs = () => {
 
     return (
         <div className="min-h-96 py-16" style={{
-            backgroundImage: "url('/blogdetail.jpg')",
+            backgroundImage: "url('/water.jpg')",backgroundRepeat: "no-repeat", backgroundSize: "cover"
           }}>
            <h1 className="text-5xl text-center">Explore Latest Blogs</h1>
 
