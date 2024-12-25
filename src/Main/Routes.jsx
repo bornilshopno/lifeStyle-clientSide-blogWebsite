@@ -13,6 +13,8 @@ import BlogDetails from "../Components/Blogs/BlogDetails";
 import UpdateBlog from "../Components/Blogs/UpdateBlog";
 import WishList from "../Components/WishList/WishList";
 import Featured from "../Components/Blogs/Featured";
+import PrivateRoute from "../Auths/PrivateRoute";
+import DevDetails from "../SharedCompoents/DevDetails";
 
 
 const Routes = createBrowserRouter([
@@ -35,7 +37,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path:"/addblog",
-                element:<AddBlogs></AddBlogs>
+                element:<PrivateRoute><AddBlogs></AddBlogs></PrivateRoute>
             },
             {
                 path:"/allblogs",
@@ -43,22 +45,25 @@ const Routes = createBrowserRouter([
             },
             {
                 path:"/wishlist",
-                element:<WishList></WishList>
+                element:<PrivateRoute><WishList></WishList></PrivateRoute>
             },
             {
                 path:"/featured-blogs",
                 element:<Featured></Featured>,
-                loader:()=>fetch("http://localhost:5000/blogs")
             },
             {
                 path:"/blog/:id",
-                element:<BlogDetails></BlogDetails>,
+                element:<PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
             },
             {
                 path:"/updateBlog/:id",
                 element: <UpdateBlog></UpdateBlog>,
                 loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
+            },
+            {
+                path:"/developer-details",
+                element:<DevDetails></DevDetails>
             }
         ]
     },

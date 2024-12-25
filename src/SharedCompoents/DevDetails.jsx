@@ -10,6 +10,7 @@ import Aos from 'aos';
 
 
 
+
 const DevDetails = () => {
 Aos.init()
 

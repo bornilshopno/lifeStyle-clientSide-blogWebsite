@@ -77,10 +77,10 @@ const AddBlogs = () => {
                         </div>
                         <div className="form-control lg:col-span-2">
                             <label className="label">
-                                <span className="label-text text-white ">Short Description</span>
+                                <span className="label-text text-white ">Short Description :</span>
                             </label>
                             <textarea
-                                placeholder="Short Descripton" name="shortDescription"
+                                placeholder="Short Descripton(apprx 50 words)" name="shortDescription"
                                 className="textarea textarea-bordered textarea-sm bg-gray-400 placeholder-white" required></textarea>
 
                         </div>
@@ -89,7 +89,7 @@ const AddBlogs = () => {
 
                         <div className="form-control lg:col-span-2">
                             <label className="label">
-                                <span className="label-text text-white">Long Description</span>
+                                <span className="label-text text-white">Long Description :</span>
                             </label>
                             <textarea
                                 placeholder="Detail Blog" name="longDescription"

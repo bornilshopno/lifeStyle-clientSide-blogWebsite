@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import useAuth from "../../SharedCompoents/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 
 const CardforAllBlogs = ({ blog }) => {
+    Aos.init()
     const { user } = useAuth()
     const { _id, category, thumbnail, title, shortDescription, longDescription, email, name, photo } = blog;
     const wishlistHandler = () => {
@@ -28,7 +31,7 @@ const CardforAllBlogs = ({ blog }) => {
             })
     }
     return (
-        <div>
+        <div className="" >
             {/* <div className="card card-compact bg-base-100">
                 <figure>
                     <img
@@ -51,7 +54,8 @@ const CardforAllBlogs = ({ blog }) => {
             </div> */}
 
 
-            <div className="card card-side bg-gray-500 shadow-xl h-80">
+            <div className="card card-side bg-gray-500 shadow-xl h-80" data-aos="fade-up"
+        data-aos-duration="3000">
                 <figure>
                     <img
                         src={thumbnail}

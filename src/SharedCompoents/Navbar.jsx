@@ -16,8 +16,8 @@ const Navbar = () => {
         <li><NavLink to={"/wishlist"}>Wishlist</NavLink> </li>
     </>
     return (
-
-        <div className="navbar bg-base-100">
+<>
+<div className="navbar bg-gradient-to-b from-[#051A1D] to-[#1D3160] text-white border-b z-40 fixed backdrop-filter backdrop-blur-l bg-opacity-40">
             <ToastContainer></ToastContainer>
             <div className="navbar-start">
                 <a className="btn btn-ghost text-xl">LiftStyle Circuit</a>
@@ -45,6 +45,9 @@ const Navbar = () => {
                 </ul>
             </div>
         </div>
+        <div className="h-16"></div>
+</>
+     
 
     );
 };
