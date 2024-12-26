@@ -3,8 +3,10 @@ import useAuth from "../../SharedCompoents/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 
+
 const AddBlogs = () => {
     const { user } = useAuth()
+   
     console.log(user)
     const addBlogHandler = e => {
         e.preventDefault()
@@ -27,7 +29,7 @@ const AddBlogs = () => {
         const newBlog = { category, thumbnail, title, shortDescription, longDescription, email, name , photo }
         console.log(newBlog)
 
-        axios.post("http://localhost:5000/blogs", newBlog)
+        axios.post("https://server-side-life-style.vercel.app/blogs", newBlog)
             .then(res => { 
                 if(res.data.insertedId)    {
                     Swal.fire({

@@ -54,12 +54,12 @@ const Routes = createBrowserRouter([
             {
                 path:"/blog/:id",
                 element:<PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
+                loader:({params})=>fetch(`https://server-side-life-style.vercel.app/blog/${params.id}`)
             },
             {
                 path:"/updateBlog/:id",
                 element: <UpdateBlog></UpdateBlog>,
-                loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
+                loader:({params})=>fetch(`https://server-side-life-style.vercel.app/blog/${params.id}`)
             },
             {
                 path:"/developer-details",

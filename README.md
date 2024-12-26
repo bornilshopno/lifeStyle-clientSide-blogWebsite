@@ -34,16 +34,18 @@ Goal of this project to create a web platform where blogger can publish their bl
 * react-toastify
 * React ToolTip
 * Sweet Alert 2
+* AOS
+* React-Data-Table
 
 
 
 ### GitHub Repository
 * Client Side
-**https://github.com/programming-hero-web-course1/b10-a9-authentication-bornilshopno**
+**https://github.com/programming-hero-web-course2/b10a11-client-side-bornilshopno**
 
 * Server Side
-**https://github.com/programming-hero-web-course1/b10-a9-authentication-bornilshopno**
+**https://github.com/programming-hero-web-course2/b10a11-server-side-bornilshopno**
 
 ### Live Page Link:
 
-**https://discount-coupons.netlify.app/**
+**https://lifestyle-circuit.netlify.app/**

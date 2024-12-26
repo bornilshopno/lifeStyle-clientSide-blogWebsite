@@ -24,7 +24,7 @@ const UpdateBlog = () => {
         const updateBlog = { category, thumbnail, title, shortDescription, longDescription, email, name , photo }
         console.log(updateBlog);
 
-        axios.put(`http://localhost:5000/blogs/${_id}`, updateBlog)
+        axios.put(`https://server-side-life-style.vercel.app/blogs/${_id}`, updateBlog)
         .then(res=>{
             if (res.data.modifiedCount){
                 Swal.fire({

@@ -4,10 +4,14 @@ import Lottie from "lottie-react";
 import useAuth from "../SharedCompoents/useAuth";
 import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { IoMdEyeOff } from "react-icons/io";
+import { IoEye } from "react-icons/io5";
 
 
 const LogIn = () => {
     const { loginUser, setLoading, setUser, googleSignIn } = useAuth()
+    const [visible, setVisible] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
     const handleSignIn = (e) => {
@@ -65,20 +69,20 @@ const LogIn = () => {
                       
                         <Lottie animationData={regSignIn} className=""></Lottie>
                     </div>
-                    <div className="card w-full shadow-2xl lg:flex-1">
+                    <div className="card w-full shadow-2xl lg:flex-1 relative">
                         <form className="card-body p-0" onSubmit={handleSignIn}>
                             <h1 className="text-center font-extrabold text-xl py-3 bg-[#00bba6] text-gray-700 rounded-xl">Login to LifeStyle CirCuit</h1>
                             <div className="form-control">
                                 <label className="label ">
                                     <span className="label-text text-white">Email :</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" name="email" placeholder="email" className="input input-bordered text-gray-700" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">Password :</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered text-gray-700"  required />
+                                <input type={visible ? "text" : "password"} name="password" placeholder="password" className="input input-bordered text-gray-700"  required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover text-white">Forgot password?</a>
                                 </label>
@@ -87,7 +91,9 @@ const LogIn = () => {
                                 <button className="btn btn-accent">Login</button>
                             </div>
                         </form>
-
+ <button className="absolute right-4 top-48 py-2" onClick={() => setVisible(!visible)}>
+                                {visible ? <IoMdEyeOff className="text-2xl text-gray-400"></IoMdEyeOff> : <IoEye className="text-gray-400 text-2xl"></IoEye>}
+                            </button>
                         <h1 className="font-bold text-center text-white my-5">----  OR  ----</h1>
 
                         <button className="btn btn-accent" onClick={useGmail}>

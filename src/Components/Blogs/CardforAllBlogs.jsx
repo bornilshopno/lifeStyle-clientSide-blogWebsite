@@ -18,7 +18,7 @@ const CardforAllBlogs = ({ blog }) => {
         const wishBlog = { blogId, wishOf, ...restItems }
         console.log(wishBlog)
 
-        axios.post(`http://localhost:5000/wishlist`, wishBlog)
+        axios.post(`https://server-side-life-style.vercel.app/wishlist`, wishBlog)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({

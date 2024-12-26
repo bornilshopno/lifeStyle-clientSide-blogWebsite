@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CardforAllBlogs from "../Blogs/CardforAllBlogs";
-import Marquee from "react-fast-marquee";
+
 
 const RecentBlogs = () => {
     const [latestBlogs,setLatestBlogs]=useState(null)
-    console.log(latestBlogs)
+
     useEffect( ()=>{
-        axios.get("http://localhost:5000/latest-blogs")
+        axios.get("https://server-side-life-style.vercel.app/latest-blogs")
         .then(res=>{
             setLatestBlogs(res.data)
         })

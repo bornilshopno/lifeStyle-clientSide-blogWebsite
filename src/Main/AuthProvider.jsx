@@ -3,6 +3,7 @@ import { app } from "../Auths/firebase";
 import AuthContext from "./AuthContext"
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import axios from "axios";
+import useAxiosSecure from "../SharedCompoents/useAxiosSecure";
 
 
 
@@ -13,6 +14,7 @@ const AuthProvider = ({ children }) => {
     const [allBlogs, setAllBlogs] = useState([])
     const [featuredBlog, setFeaturedBlog] = useState([])
    
+    const axiosSecure=useAxiosSecure()
     const auth = getAuth(app);
     const createUser = (email, password) => {
         setLoading(true)
@@ -37,17 +39,35 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            setLoading(false)
+            console.log(currentUser)
+            if(currentUser?.email){
+                const user={email: currentUser.email};
+                axiosSecure.post("/jwt" ,user)
+                // axios.post("https://server-side-life-style.vercel.app/jwt", user, {withCredentials:true})
+                .then(res=> {console.log(res);
+                    setLoading(false)
+                })
+            }
+            else{
+                axiosSecure.post("/logout" ,{})
+                // axios.post("https://server-side-life-style.vercel.app/logout" ,{}, {withCredentials:true})
+                .then(res=> {console.log(res.data);
+                    setLoading(false)
+                })
+                .catch(error => {
+                    console.error('Error during logout:', error);
+                });
+            }
+        
         })
 
         return () => unSubscribe();
-    }, [auth])
+    }, [auth, axiosSecure])
 
     useEffect(() => {
-        axios.get("http://localhost:5000/blogs")
+        axios.get("https://server-side-life-style.vercel.app/blogs")    
             .then(res => {
                 setAllBlogs(res.data);
-                console.log(res.data)
             })
     },
         []

@@ -3,6 +3,8 @@ import useAuth from "../../SharedCompoents/useAuth";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import { toast } from "react-toastify";
+
 
 
 const BlogDetails = () => {
@@ -22,15 +24,19 @@ const BlogDetails = () => {
         const commentInfo = { blogID, name, photo, email, comment }
         console.log(commentInfo)
 
-        axios.post("http://localhost:5000/comments", commentInfo)
+
+        axios.post("https://server-side-life-style.vercel.app/comments", commentInfo)
             .then(result => {
                 console.log(result.data);
-                alert(" your comment added")
+                const increasedComments=[...blogComments,commentInfo]
+                toast.success(" your comment added")
+                setComment(increasedComments)
+        
             })
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/comment/${_id}`)
+        axios.get(`https://server-side-life-style.vercel.app/comment/${_id}`)
             .then(res => { setComment(res.data) })
     }, [_id])
 
