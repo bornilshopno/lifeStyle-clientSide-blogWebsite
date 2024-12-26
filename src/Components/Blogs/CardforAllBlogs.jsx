@@ -32,30 +32,9 @@ const CardforAllBlogs = ({ blog }) => {
     }
     return (
         <div className="" >
-            {/* <div className="card card-compact bg-base-100">
-                <figure>
-                    <img
-                        src={thumbnail}
-                        alt="blogImage"
-                        className="w-80 h-60" />
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">{title}</h2>
-                    <div className="flex justify-between flex-row-reverse">
-                        <p>Blog Category : {category}</p>
-                        <p>Blog Posted By: {name}</p>
-                    </div>
-                    <p>{shortDescription}</p>
-                    <div className="card-actions justify-end">
-                        <Link to={`/blog/${_id}`}><button className="btn btn-primary">Details</button></Link>
-                        <button className="btn btn-primary" onClick={wishlistHandler}>Add to Wishlist</button>
-                    </div>
-                </div>
-            </div> */}
-
-
-            <div className="card card-side bg-gray-100 shadow-xl h-80" data-aos="fade-up"
-        data-aos-duration="3000">
+     
+            <div className="card card-side bg-gray-100 shadow-xl h-80" data-aos="zoom-in"
+        data-aos-duration="1000">
                 <figure>
                     <img
                         src={thumbnail}
