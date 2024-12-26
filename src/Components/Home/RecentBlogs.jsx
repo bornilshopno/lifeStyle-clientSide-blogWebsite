@@ -14,7 +14,7 @@ const RecentBlogs = () => {
     } , [])
 
     return (
-        <div className="min-h-96 py-16" style={{
+        <div className="min-h-96 py-16 bg-opacity-40" style={{
             backgroundImage: "url('/water.jpg')",backgroundRepeat: "no-repeat", backgroundSize: "cover"
           }}>
            <h1 className="text-5xl text-center">Explore Latest Blogs</h1>

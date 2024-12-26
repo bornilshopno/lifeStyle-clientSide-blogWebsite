@@ -54,7 +54,7 @@ const CardforAllBlogs = ({ blog }) => {
             </div> */}
 
 
-            <div className="card card-side bg-gray-500 shadow-xl h-80" data-aos="fade-up"
+            <div className="card card-side bg-gray-100 shadow-xl h-80" data-aos="fade-up"
         data-aos-duration="3000">
                 <figure>
                     <img

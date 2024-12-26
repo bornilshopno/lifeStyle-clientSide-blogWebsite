@@ -21,9 +21,10 @@ toast.success("Thanks for being with us!")
                     <div className="form-control col-span-2">
                     <button className="btn rounded-xl btn-outline " >Subscribe</button>
                     </div>
+                    
                 </div>
                 <label className="label">
-                    <p className="label-text-alt">By clicking to the Subscribe button, I agree to the <span className="text-red-500">Terms and Policy</span> of Discount Pro Website.</p>
+                    <p className="label-text-alt">By clicking to the Subscribe button, I agree to the <span className="text-red-500">Terms and Policy</span> of LifeStyle Circuit Website.</p>
                 </label>
             </form>
         </div>

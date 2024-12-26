@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Stats from "./Stats";
-
+import { motion } from "motion/react"
 
 const Banner = () => {
     return (
@@ -21,9 +21,17 @@ const Banner = () => {
      </Link>
     </div>
   </div>
-<div className="stats absolute -bottom-12">  <Stats></Stats></div>
+ <motion.div animate={{x:[0,140,-140,0]}} transition={{duration:10, repeat:Infinity, delay:5}} className="stats absolute -bottom-12">
+ <Stats></Stats>
+ </motion.div>
+ 
+{/* <div className="stats absolute -bottom-12">  <Stats></Stats></div> */}
 </div>
     );
 };
+
+
+
+
 
 export default Banner;

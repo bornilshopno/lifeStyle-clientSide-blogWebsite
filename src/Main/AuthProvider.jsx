@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { app } from "../Auths/firebase";
+
 import AuthContext from "./AuthContext"
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import axios from "axios";
 import useAxiosSecure from "../SharedCompoents/useAxiosSecure";
+import { app } from "../Auths/firebase.init";
+
 
 
 
