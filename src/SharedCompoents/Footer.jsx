@@ -7,10 +7,10 @@ import { IoLogoYoutube } from "react-icons/io";
 const Footer = () => {
     return (
         <div className="bg-gray-800 text-white">
-            <footer className="footer py-5 px-10 place-items-center">
+            <footer className="footer py-5 px-10 lg:place-items-center text-gray-300">
                 <aside>
-                <Link to={"/"}><a className="btn btn-ghost text-xl">LiftStyle Circuit</a></Link>
-                    <p className="text-center">A Page for Blogs
+                <Link to={"/"}><h1 className="text-xl font-bold ">LiftStyle Circuit</h1></Link>
+                    <p className="">A Page for Blogs
                     </p>
                 </aside>
                 <nav>

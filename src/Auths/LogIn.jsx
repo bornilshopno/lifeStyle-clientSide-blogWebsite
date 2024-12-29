@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { IoMdEyeOff } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 
 const LogIn = () => {
@@ -61,12 +62,14 @@ const LogIn = () => {
     }
     return (
         <div className="bg-[url('/network.jpg')] bg-cover bg-center text-white">
-
+            <Helmet>
+                <title>LifeStyle Circuit || LogIn</title>
+            </Helmet>
             <div className="hero min-h-96 ">
 
                 <div className="hero-content flex-col lg:flex-row gap-10 lg:gap-20 w-10/12 lg:w-11/12 mx-auto">
                     <div className="text-center lg:text-center lg:flex-1">
-                      
+
                         <Lottie animationData={regSignIn} className=""></Lottie>
                     </div>
                     <div className="card w-full shadow-2xl lg:flex-1 relative">
@@ -82,7 +85,7 @@ const LogIn = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Password :</span>
                                 </label>
-                                <input type={visible ? "text" : "password"} name="password" placeholder="password" className="input input-bordered text-gray-700"  required />
+                                <input type={visible ? "text" : "password"} name="password" placeholder="password" className="input input-bordered text-gray-700" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover text-white">Forgot password?</a>
                                 </label>
@@ -91,9 +94,9 @@ const LogIn = () => {
                                 <button className="btn btn-accent">Login</button>
                             </div>
                         </form>
- <button className="absolute right-4 top-48 py-2" onClick={() => setVisible(!visible)}>
-                                {visible ? <IoMdEyeOff className="text-2xl text-gray-400"></IoMdEyeOff> : <IoEye className="text-gray-400 text-2xl"></IoEye>}
-                            </button>
+                        <button className="absolute right-4 top-48 py-2" onClick={() => setVisible(!visible)}>
+                            {visible ? <IoMdEyeOff className="text-2xl text-gray-400"></IoMdEyeOff> : <IoEye className="text-gray-400 text-2xl"></IoEye>}
+                        </button>
                         <h1 className="font-bold text-center text-white my-5">----  OR  ----</h1>
 
                         <button className="btn btn-accent" onClick={useGmail}>

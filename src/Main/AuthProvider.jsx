@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [allBlogs, setAllBlogs] = useState([])
     const [featuredBlog, setFeaturedBlog] = useState([])
+    const [myWishes, setMywishes] = useState(null);
    
     const axiosSecure=useAxiosSecure()
     const auth = getAuth(app);
@@ -40,12 +41,12 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            console.log(currentUser)
+          
             if(currentUser?.email){
                 const user={email: currentUser.email};
                 axiosSecure.post("/jwt" ,user)
                 // axios.post("https://server-side-life-style.vercel.app/jwt", user, {withCredentials:true})
-                .then(res=> {console.log(res);
+                .then(res=> {
                     setLoading(false)
                 })
             }
@@ -85,7 +86,7 @@ const AuthProvider = ({ children }) => {
 
 
 
-    const authInfo = { loading, setLoading, createUser, loginUser, user, setUser, userSignOut, googleSignIn, auth, allBlogs, setAllBlogs, featuredBlog }
+    const authInfo = { loading, setLoading, createUser, loginUser, user, setUser, userSignOut, googleSignIn, auth, allBlogs, setAllBlogs, featuredBlog,myWishes, setMywishes }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

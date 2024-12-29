@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const UpdateBlog = () => {
     const selectedBlog = useLoaderData()
     const navigate=useNavigate()
-    const { _id, category, thumbnail, title, shortDescription, longDescription, email, name } = selectedBlog;
+    const { _id, category, thumbnail, title, shortDescription, longDescription } = selectedBlog;
     const {user}=useAuth()
     const updateBlogHandler = (e) => {
         e.preventDefault();

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import RecentBlogs from "./RecentBlogs";
 import Subscribe from "./Subscribe";
@@ -5,15 +6,18 @@ import Subscribe from "./Subscribe";
 
 
 const Home = () => {
-    return (
-        <div>
-          <Banner></Banner>
-        <RecentBlogs></RecentBlogs>
-        <div className="bg-gradient-to-b from-[#051A1D] to-gray-700 py-10">
+  return (
+    <div>
+      <Helmet>
+        <title>LifeStyle Circuit || Home</title>
+      </Helmet>
+      <Banner></Banner>
+      <RecentBlogs></RecentBlogs>
+      <div className="bg-gradient-to-b from-[#051A1D] to-gray-700 py-10">
         <Subscribe></Subscribe>
-        </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Home;

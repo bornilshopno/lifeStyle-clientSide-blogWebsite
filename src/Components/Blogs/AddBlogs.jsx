@@ -2,11 +2,12 @@ import { toast } from "react-toastify";
 import useAuth from "../../SharedCompoents/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+import Typewriter from 'typewriter-effect';
+import { Helmet } from "react-helmet-async";
 
 const AddBlogs = () => {
     const { user } = useAuth()
-   
+
     console.log(user)
     const addBlogHandler = e => {
         e.preventDefault()
@@ -18,7 +19,7 @@ const AddBlogs = () => {
         const longDescription = form.longDescription.value;
         const email = user.email;
         const name = user.displayName;
-        const photo= user.photoURL;
+        const photo = user.photoURL;
 
 
         if (category === "Blog Category") {
@@ -26,26 +27,38 @@ const AddBlogs = () => {
             return;
         }
 
-        const newBlog = { category, thumbnail, title, shortDescription, longDescription, email, name , photo }
-        console.log(newBlog)
+        const newBlog = { category, thumbnail, title, shortDescription, longDescription, email, name, photo }
+      
 
         axios.post("https://server-side-life-style.vercel.app/blogs", newBlog)
-            .then(res => { 
-                if(res.data.insertedId)    {
+            .then(res => {
+                if (res.data.insertedId) {
                     Swal.fire({
                         title: 'Blog Added!',
                         text: 'Check All Blogs to see its existence',
                         icon: 'success',
                         confirmButtonText: 'Done'
-                      })
-                }
-             })
+                    })
+                };
+                form.reset();
+            })
 
 
     }
     return (
-        <div className="bg-opacity-45" style={{backgroundImage: "url('/login.jpg')", backgroundSize:"cover", backgroundRepeat: "no-repeat"}}>
-            <h1>Add a New Blog</h1>
+        <div className="bg-opacity-45" style={{ backgroundImage: "url('/login.jpg')", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+            <Helmet>
+                <title>LifeStyle Circuit || Add Blog</title>
+            </Helmet>
+            <h1 className="py-5 md:py-10 pt-10 text-center text-xl lg:text-4xl font-bold text-gray-200">
+                <Typewriter
+                    options={{
+                        strings: ["Add Your New Blog!"],
+                        autoStart: true,
+                        loop: 1,
+                        typeSpeed: 20
+                    }}
+                />     </h1>
             <div className="card  w-full shrink-0 shadow-2xl">
                 <form className="card-body" onSubmit={addBlogHandler}>
 

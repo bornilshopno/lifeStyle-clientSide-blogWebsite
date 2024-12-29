@@ -9,12 +9,13 @@ import Swal from "sweetalert2";
 import { IoMdEyeOff } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
     const [visible, setVisible] = useState(false)
     const[passErr,setPassErr]=useState("")
-    const { setLoading, createUser, user, setUser, auth, googleSignIn, userSignOut } = useAuth()
+    const { setLoading, createUser,  setUser, auth, googleSignIn, userSignOut } = useAuth()
     const navigate = useNavigate()
     const handleRegister = e => {
         e.preventDefault()
@@ -99,10 +100,11 @@ const Register = () => {
     }
 
 
-    console.log(user)
     return (
         <div className="bg-[url('/network.jpg')] bg-cover bg-center">
-
+   <Helmet>
+                 <title>LifeStyle Circuit || Register</title>
+               </Helmet>
             <div className="hero  min-h-screen ">
 
                 <div className="hero-content flex-col lg:flex-row-reverse gap-10 lg:gap-20 w-10/12 lg:w-11/12 mx-auto">
