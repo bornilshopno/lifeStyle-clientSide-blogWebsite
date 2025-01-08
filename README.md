@@ -41,10 +41,10 @@ Goal of this project to create a web platform where blogger can publish their bl
 
 ### GitHub Repository
 * Client Side
-**https://github.com/programming-hero-web-course2/b10a11-client-side-bornilshopno**
+**[Client Side](https://github.com/bornilshopno/lifeStyle-clientSide-blogWebsite)**
 
 * Server Side
-**https://github.com/programming-hero-web-course2/b10a11-server-side-bornilshopno**
+**[Server Side](https://github.com/bornilshopno/lifeStyle-serverSide-blogWebsite.git)**
 
 ### Live Page Link:
 
