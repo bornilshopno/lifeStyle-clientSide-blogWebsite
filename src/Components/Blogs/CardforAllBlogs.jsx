@@ -101,7 +101,7 @@ import 'aos/dist/aos.css';
                   
                     <div className="card-actions justify-end">
                         <Link to={`/blog/${_id}`}><button className="btn btn-primary btn-sm">Details</button></Link>
-                        <button className="btn btn-primary btn-sm" onClick={wishlistHandler}>Add to Wishlist</button>
+                        <button className="btn btn-primary btn-sm" onClick={wishlistHandler}>Add in Wishlist</button>
                     </div>
                 </div>
             </div>
