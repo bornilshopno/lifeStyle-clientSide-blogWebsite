@@ -70,9 +70,12 @@ const CardforAllBlogs = ({ blog }) => {
 
         setInWishes(existing);
     };
+    const box = {
+        borderRadius: 5,
+    }
     
     return (
-        <div className="" >
+        <div className=" " >
      
      {/* Aos.init()
      import Aos from "aos";
@@ -80,31 +83,41 @@ import 'aos/dist/aos.css';
      data-aos="zoom-in"
      data-aos-duration="1000" */}
 
-            <div className="card pt-4 rounded-md bg-gray-100" >
+            <motion.div className="card  rounded-md bg-white text-gray-600"  whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={box} >
                 <figure className="">
-                    <motion.img
-                        src={thumbnail} animate={{scale:1.2}} 
-                        transition={{duration:5, repeat:Infinity, delay:1}}
+                    <img
+                        src={thumbnail}                         
                         alt="blogImage"
-                        className="w-80 h-52 object-fill " />
+                        className="h-28 w-2/3 mx-auto lg:w-full object-cover" />
                 </figure>
-                <div className="card-body px-4 pt-0 pb-4">
-                    <h2 className="card-title py-2">{title}</h2>
-                    <div className="flex justify-between flex-col">
+                <div className="card-body px-4 pt-0 pb-4 relative">
+                   <div className="h-28 mt-2">
+                   <h2 className="font-semibold py-2 text-base">
+                       {(title.length>20) ? `${title.slice(0,40)}...` : title}
+                    </h2>
+                    {/* <h2 className="card-title py-2">{title}</h2> */}
+                  
                         <p className="italic">Blog By: <span className="font-semibold">{name}</span></p>
-                        <p className="italic">Category :<span className="font-semibold">{category}</span> </p>
-                        <p className="pt-2">{shortDescription}</p>
+                   </div>
+                        
+                        {/* <p className="pt-2 h-[120px]">{shortDescription.slice(0,100)}...</p> */}
                        
 
-                    </div>
+                  
 
                   
                     <div className="card-actions justify-end">
-                        <Link to={`/blog/${_id}`}><button className="btn btn-primary btn-sm">Details</button></Link>
-                        <button className="btn btn-primary btn-sm" onClick={wishlistHandler}>Add in Wishlist</button>
+                        <Link to={`/blog/${_id}`}><button className="btn  dark:bg-[#6A609F] btn-sm">Details</button></Link>
+                        <button className="btn  dark:bg-[#6A609F] btn-sm" onClick={wishlistHandler}>Add in Wishlist</button>
+                    </div>
+                    <div className="absolute border border-b-gray-600 border-l-gray-600 rounded-lg -top-4 right-1/2 translate-x-1/2 lg:translate-x-0 lg:right-0 p-1 bg-white text-white">
+                    <p className="italic bg-gray-600 rounded-md px-1"><span className="font-semibold">{category}</span> </p>
                     </div>
                 </div>
-            </div>
+              
+            </motion.div>
 
         </div>
     );

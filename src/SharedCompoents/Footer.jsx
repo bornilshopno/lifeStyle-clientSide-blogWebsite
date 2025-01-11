@@ -6,7 +6,7 @@ import { IoLogoYoutube } from "react-icons/io";
 
 const Footer = () => {
     return (
-        <div className="bg-gray-800 text-white">
+        <div className="bg-[#6a609f] dark:bg-black ">
             <footer className="footer py-5 px-10 lg:place-items-center text-gray-300">
                 <aside>
                 <Link to={"/"}><h1 className="text-xl font-bold ">LiftStyle Circuit</h1></Link>

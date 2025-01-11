@@ -46,7 +46,8 @@ const AddBlogs = () => {
 
     }
     return (
-        <div className="bg-opacity-45" style={{ backgroundImage: "url('/login.jpg')", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+        <div className=" bg-[#461c5a]" >
+            
             <Helmet>
                 <title>LifeStyle Circuit || Add Blog</title>
             </Helmet>
@@ -68,13 +69,13 @@ const AddBlogs = () => {
                             <label className="label">
                                 <span className="label-text text-white">Blog Title :</span>
                             </label>
-                            <input type="text" name="title" placeholder="Blog Title" className="input input-bordered bg-gray-400 placeholder-white" required />
+                            <input type="text" name="title" placeholder="Blog Title" className="input input-bordered bg-[#F4F0FF] placeholder-gray-600" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-white">Category :</span>
                             </label>
-                            <select className="select w-full  input-bordered text-white bg-gray-400" name="category" defaultValue={"Blog Category"}>
+                            <select className="select w-full  input-bordered text-gray-600 bg-[#F4F0FF]" name="category" defaultValue={"Blog Category"}>
                                 <option disabled >Blog Category</option>
                                 <option>LifeStyle</option>
                                 <option>Technology</option>
@@ -88,7 +89,7 @@ const AddBlogs = () => {
                             <label className="label">
                                 <span className="label-text text-white">Blog Image :</span>
                             </label>
-                            <input type="url" name="thumbnail" placeholder="URL of Blog Image" className="input input-bordered bg-gray-400 placeholder-white" required />
+                            <input type="url" name="thumbnail" placeholder="URL of Blog Image" className="input input-bordered bg-[#F4F0FF] placeholder-gray-600" required />
                         </div>
                         <div className="form-control lg:col-span-2">
                             <label className="label">
@@ -96,7 +97,7 @@ const AddBlogs = () => {
                             </label>
                             <textarea
                                 placeholder="Short Descripton(apprx 50 words)" name="shortDescription"
-                                className="textarea textarea-bordered textarea-sm bg-gray-400 placeholder-white" required></textarea>
+                                className="textarea textarea-bordered textarea-sm bg-[#F4F0FF] placeholder-gray-600" required></textarea>
 
                         </div>
 
@@ -108,12 +109,12 @@ const AddBlogs = () => {
                             </label>
                             <textarea
                                 placeholder="Detail Blog" name="longDescription"
-                                className="textarea textarea-bordered textarea-md bg-gray-400 placeholder-white" required></textarea>
+                                className="textarea textarea-bordered textarea-md bg-[#F4F0FF] placeholder-gray-600" required></textarea>
 
                         </div>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-accent">Submit Your Blog</button>
+                        <button className="btn btn-accent bg-[#6A609F] border-none">Submit Your Blog</button>
                     </div>
                 </form>
             </div>

@@ -73,7 +73,7 @@ const WishList = () => {
     
 
     return (
-            <div className="min-h-72 lg:min-h-96 " style={{
+            <div className="min-h-72 lg:min-h-screen " style={{
                 backgroundImage: "url('/water.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"
             }}>
                 <Helmet>

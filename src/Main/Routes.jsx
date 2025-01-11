@@ -14,7 +14,7 @@ import UpdateBlog from "../Components/Blogs/UpdateBlog";
 import WishList from "../Components/WishList/WishList";
 import Featured from "../Components/Blogs/Featured";
 import PrivateRoute from "../Auths/PrivateRoute";
-import DevDetails from "../SharedCompoents/DevDetails";
+import Developer from "../SharedCompoents/Developer";
 
 
 const Routes = createBrowserRouter([
@@ -53,7 +53,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path:"/blog/:id",
-                element:<PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
+                element:<BlogDetails></BlogDetails>,
                 loader:({params})=>fetch(`https://server-side-life-style.vercel.app/blog/${params.id}`)
             },
             {
@@ -61,12 +61,13 @@ const Routes = createBrowserRouter([
                 element: <UpdateBlog></UpdateBlog>,
                 loader:({params})=>fetch(`https://server-side-life-style.vercel.app/blog/${params.id}`)
             },
-            {
-                path:"/developer-details",
-                element:<DevDetails></DevDetails>
-            }
+            
         ]
     },
+    {
+        path:"/developer-details",
+        element:<Developer></Developer>
+    }
 ]);
 
 export default Routes;

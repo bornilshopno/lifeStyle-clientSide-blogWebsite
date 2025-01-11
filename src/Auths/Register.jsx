@@ -111,9 +111,9 @@ const Register = () => {
                     <div className="text-center lg:text-center lg:flex-1 ">
                         <Lottie animationData={regAnimation} className="w-full"></Lottie>
                     </div>
-                    <div className="card w-full shadow-2xl lg:flex-1 text-white  pb-5">
+                    <div className="card w-full shadow-2xl lg:flex-1 text-white bg-[#6A609F] p-4">
                         <form className="card-body p-2 relative" onSubmit={handleRegister}>
-                            <h1 className="text-center font-extrabold text-xl py-3 bg-[#00bba6] text-gray-700 rounded-xl">Sign Up</h1>
+                            <h1 className="text-center font-extrabold text-xl py-3 bg-gray-400 text-gray-700 rounded-xl">Sign Up</h1>
                            <div className="grid grid-cols-1  gap-3">
                            <div className="form-control">
                                 <label className="label">
@@ -143,17 +143,17 @@ const Register = () => {
                            </div>
                            <p className="text-red-500 font-bold text-center">{passErr}</p>
                             <div className="form-control mt-6">
-                                <button className="btn btn-accent">Register</button>
+                                <button className="btn bg-gray-400">Register</button>
                             </div>
                         </form>
 
-                        <button className="absolute right-4 top-72 py-5" onClick={() => setVisible(!visible)}>
+                        <button className="absolute right-8 top-[304px] py-5" onClick={() => setVisible(!visible)}>
                                 {visible ? <IoMdEyeOff className="text-2xl text-gray-400"></IoMdEyeOff> : <IoEye className="text-gray-400 text-2xl"></IoEye>}
                             </button>
 
-                        <h1 className="font-bold text-center text-white my-5">----  OR  ----</h1>
+                            <div className="divider divider-accent">or</div>
 
-                        <button className="btn btn-accent " onClick={useGmail}>
+                        <button className="btn bg-gray-400 mx-2" onClick={useGmail}>
                             <FcGoogle></FcGoogle>
                             Login with Google</button>
                     </div>

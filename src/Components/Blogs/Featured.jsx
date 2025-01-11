@@ -21,11 +21,15 @@ const Featured = () => {
         },
         {
             name: 'Author',
+            selector: row => row.name,
+        },
+        {
+            name: 'Author Contact',
             selector: row => row.email,
         },
         {
             name: 'Short Description',
-            selector: row => row.shortDescription,
+            selector: row => row.shortDescription.slice(0,30),
         },
         {
             name: "Click to View",
@@ -44,12 +48,12 @@ const Featured = () => {
 
 
     return (
-        <div className="bg-gradient-to-t from-gray-800 to-[#1D3160]">
+        <div className="">
             <Helmet>
                 <title>LifeStyle Circuit || Featured Blogs</title>
             </Helmet>
 
-            <div className="lg:w-11/12 mx-auto">
+            <div className=" mx-auto">
                 <DataTable
                     columns={columns}
                     data={featuredBlog}

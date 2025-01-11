@@ -72,9 +72,9 @@ const LogIn = () => {
 
                         <Lottie animationData={regSignIn} className=""></Lottie>
                     </div>
-                    <div className="card w-full shadow-2xl lg:flex-1 relative">
+                    <div className="card w-full shadow-2xl lg:flex-1 relative bg-[#6A609F] p-4">
                         <form className="card-body p-0" onSubmit={handleSignIn}>
-                            <h1 className="text-center font-extrabold text-xl py-3 bg-[#00bba6] text-gray-700 rounded-xl">Login to LifeStyle CirCuit</h1>
+                            <h1 className="text-center font-extrabold text-xl py-3 bg-gray-400 text-gray-700 rounded-xl">Login to LifeStyle CirCuit</h1>
                             <div className="form-control">
                                 <label className="label ">
                                     <span className="label-text text-white">Email :</span>
@@ -91,15 +91,15 @@ const LogIn = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-accent">Login</button>
+                                <button className="btn bg-gray-400">Login</button>
                             </div>
                         </form>
-                        <button className="absolute right-4 top-48 py-2" onClick={() => setVisible(!visible)}>
+                        <button className="absolute right-8 top-52 py-2" onClick={() => setVisible(!visible)}>
                             {visible ? <IoMdEyeOff className="text-2xl text-gray-400"></IoMdEyeOff> : <IoEye className="text-gray-400 text-2xl"></IoEye>}
                         </button>
-                        <h1 className="font-bold text-center text-white my-5">----  OR  ----</h1>
+                        <div className="divider divider-accent">or</div>
 
-                        <button className="btn btn-accent" onClick={useGmail}>
+                        <button className="btn bg-gray-400" onClick={useGmail}>
                             <FcGoogle></FcGoogle>
                             Login with Google</button>
                     </div>

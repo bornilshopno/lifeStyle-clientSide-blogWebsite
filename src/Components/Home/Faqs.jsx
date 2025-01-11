@@ -7,11 +7,11 @@ const Faqs = () => {
     return (<div className="w-11/12 md:w-10/12 mx-auto">
 
         <div className="flex flex-col md:flex-row gap-5 mt-10 ">
-            <div className="md:w-1/2 my-auto">
-            <div className="w-2/3 mx-auto">
+            <div className="md:w-5/12 m-auto">
+            
             <Lottie animationData={faqAnimation} loop={true}></Lottie>
-            </div>
-            <h2 className="text-center text-2xl md:text-5xl font-bold py-3 border-2 rounded-lg w-2/3 bg-amber-400 text-white mx-auto mt-5">FAQs <br/> <span className="text-base">Frequently Asked Questions</span></h2>
+          
+           
  
             </div>
             <div className="md:w-1/2 my-auto">
