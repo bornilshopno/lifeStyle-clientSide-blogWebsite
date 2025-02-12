@@ -109,8 +109,8 @@ import 'aos/dist/aos.css';
 
                   
                     <div className="card-actions justify-end">
-                        <Link to={`/blog/${_id}`}><button className="btn  dark:bg-[#6A609F] btn-sm">Details</button></Link>
-                        <button className="btn  dark:bg-[#6A609F] btn-sm" onClick={wishlistHandler}>Add in Wishlist</button>
+                        <Link to={`/blog/${_id}`}><button className="btn bg-[#9d96c9] dark:bg-[#6A609F] btn-sm">Details</button></Link>
+                        <button className="btn bg-[#9d96c9] dark:bg-[#6A609F] btn-sm" onClick={wishlistHandler}>Add in Wishlist</button>
                     </div>
                     <div className="absolute border border-b-gray-600 border-l-gray-600 rounded-lg -top-4 right-1/2 translate-x-1/2 lg:translate-x-0 lg:right-0 p-1 bg-white text-white">
                     <p className="italic bg-gray-600 rounded-md px-1"><span className="font-semibold">{category}</span> </p>

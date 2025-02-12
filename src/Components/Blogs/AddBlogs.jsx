@@ -46,34 +46,35 @@ const AddBlogs = () => {
 
     }
     return (
-        <div className=" bg-[#461c5a]" >
+        <div className=" bg-gray-200 dark:bg-gray-800" >
             
             <Helmet>
                 <title>LifeStyle Circuit || Add Blog</title>
             </Helmet>
-            <h1 className="py-5 md:py-10 pt-10 text-center text-xl lg:text-4xl font-bold text-gray-200">
+            <h1 className="py-5 md:py-10 pt-10 text-center text-xl lg:text-4xl font-bold text-[#6A609F] dark:text-gray-200">
                 <Typewriter
                     options={{
                         strings: ["Add Your New Blog!"],
                         autoStart: true,
                         loop: 1,
-                        typeSpeed: 20
+                        typeSpeed: 20,
+                        cursor: "",
                     }}
                 />     </h1>
-            <div className="card  w-full shrink-0 shadow-2xl">
-                <form className="card-body" onSubmit={addBlogHandler}>
+            <div className="card w-full shrink-0 shadow-2xl ">
+                <form className="card-body " onSubmit={addBlogHandler}>
 
                     <div className="grid grid-cols-1  lg:grid-cols-2 gap-4">
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-white">Blog Title :</span>
+                                <span className="label-text text-[#6A609F] dark:text-white">Blog Title :</span>
                             </label>
                             <input type="text" name="title" placeholder="Blog Title" className="input input-bordered bg-[#F4F0FF] placeholder-gray-600" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-white">Category :</span>
+                                <span className="label-text text-[#6A609F] dark:text-white">Category :</span>
                             </label>
                             <select className="select w-full  input-bordered text-gray-600 bg-[#F4F0FF]" name="category" defaultValue={"Blog Category"}>
                                 <option disabled >Blog Category</option>
@@ -87,13 +88,13 @@ const AddBlogs = () => {
 
                         <div className="form-control lg:col-span-2">
                             <label className="label">
-                                <span className="label-text text-white">Blog Image :</span>
+                                <span className="label-text text-[#6A609F] dark:text-white">Blog Image :</span>
                             </label>
                             <input type="url" name="thumbnail" placeholder="URL of Blog Image" className="input input-bordered bg-[#F4F0FF] placeholder-gray-600" required />
                         </div>
                         <div className="form-control lg:col-span-2">
                             <label className="label">
-                                <span className="label-text text-white ">Short Description :</span>
+                                <span className="label-text text-[#6A609F] dark:text-white">Short Description :</span>
                             </label>
                             <textarea
                                 placeholder="Short Descripton(apprx 50 words)" name="shortDescription"
@@ -105,7 +106,7 @@ const AddBlogs = () => {
 
                         <div className="form-control lg:col-span-2">
                             <label className="label">
-                                <span className="label-text text-white">Long Description :</span>
+                                <span className="label-text text-[#6A609F] dark:text-white">Long Description :</span>
                             </label>
                             <textarea
                                 placeholder="Detail Blog" name="longDescription"
