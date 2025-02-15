@@ -64,15 +64,15 @@ const BlogDetails = () => {
 
                         </div>
                     </div>
-                    <p className="py-6 px-4 w-10/12 text-gray-800 lg:max-w-4xl mx-auto bg-[#6a609f] rounded-xl">
+                    <p className="py-6 px-4 w-10/12 text-gray-800 lg:max-w-4xl mx-auto bg-[#a49ccd] rounded-xl">
                         {longDescription}
                     </p>
 
                     <div className="w-11/12 lg:w-9/12 mx-auto">
                         <div className="Comment-Section">
                             {user?.email === email ?
-                                <div className=" p-5 lg:p-10 lg:max-w-lg mx-auto bg-stone-500 flex flex-col-reverse items-center justify-center gap-3 lg:gap-5 rounded-xl border-white border-4 ">
-                                    <Link to={`/updateBlog/${_id}`}>  <button className="btn btn-primary">Update Blog</button></Link>
+                                <div className="py-2 px-5 lg:px-10 lg:max-w-lg mx-auto bg-[#9186c7] flex flex-col-reverse items-center justify-center gap-3 lg:gap-5 rounded-xl border-white border-4 ">
+                                    <Link to={`/updateBlog/${_id}`}>  <button className="btn btn-sm border-none ">Update Blog</button></Link>
                                     <h2>Author of the Blog are not entertained to add Comments</h2>
                                 </div>
                                 : <>
